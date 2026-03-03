@@ -81,59 +81,6 @@ No migrations needed.
 
 _entries[]   Fixed CacheEntry array (size = capacity)
 _indexMap{}  Dictionary<string, int>  key → array index  O(1) lookup
-_lruIndex    int — direct pointer to current LRU slot
-_lock        object — guards multi-step atomic operations
-```
-
-### CacheEntry
-```csharp
-string Key           // cache key
-T      Value         // any reference or value type
-long   LastUsedTime  // DateTime.UtcNow.Ticks — updated on every touch
-
-### TryGet
-
-TryGet("k1")
-  _indexMap lookup → MISS  → return false
-  _indexMap lookup → HIT at index 2
-    entry.LastUsedTime = now
-    if index == _lruIndex → FindLruIndex()   // pointer must move
-    return value
-
-### Set
-
-Set("k4", value)
-  Key already in _indexMap?
-    YES → update value + LastUsedTime
-          if was lruIndex → FindLruIndex()
-          return
-
-  _count < _capacity?
-    YES → GetEmptySlot() → write → _count++
-
-  Cache FULL
-    targetIdx = _lruIndex           // evict this slot
-    _indexMap.TryRemove(old key)
-    write new entry into targetIdx
-    FindLruIndex() → _lruIndex updated
-
-### FindLruIndex
-
-Scans all **occupied** slots, returns index of the entry with the
-smallest `LastUsedTime` — that is the new eviction candidate.
-
-### Complexity table
-
-| Operation | Cost | When |
-|---|---|---|
-| TryGet — no pointer move | O(1) | Entry is not LRU |
-| TryGet — pointer move | O(n) | Entry IS the current LRU |
-| Set — update existing | O(1)/O(n) | O(n) if entry was LRU |
-| Set — insert, not full | O(n) | Scan for empty slot |
-| Set — eviction | O(n) | FindLruIndex after evict |
-| Maximum n | **100** | Config ceiling |
-
----
 
 ## Design Patterns
 
@@ -142,11 +89,6 @@ smallest `LastUsedTime` — that is the new eviction candidate.
 | **Chain of Responsibility** | `RedisCacheHandler → SdcsCacheHandler → DatabaseHandler` |
 | **Repository** | `IDataRepository / DataRepository` isolates EF Core |
 | **Dependency Injection** | All abstractions wired in `Program.cs` |
-
-Chain assembly in `Program.cs`:
-```csharp
-redis.SetNext(sdcs).SetNext(db);
-return redis; // head of chain
 
 ## How to Run
 
