@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Deployment/">
+    <File Path="docker-compose.yaml" />
+  </Folder>
+  <Project Path="DataService.Tests.csproj/DataService.Tests.csproj" Id="d2d14b3e-9008-417c-8264-df614731966c" />
+  <Project Path="DataService/DataService.csproj" />
+</Solution>

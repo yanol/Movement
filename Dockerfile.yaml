@@ -1,0 +1,19 @@
+# ── Build stage ────────────────────────────────────────────
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copy project file and restore
+COPY DataService/*.csproj ./DataService/
+RUN dotnet restore ./DataService/DataService.csproj
+
+# Copy everything and publish
+COPY DataService/. ./DataService/
+RUN dotnet publish ./DataService/DataService.csproj -c Release -o /app/publish
+
+# ── Runtime stage ──────────────────────────────────────────
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+RUN mkdir -p /app/data
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "DataService.dll"]
+

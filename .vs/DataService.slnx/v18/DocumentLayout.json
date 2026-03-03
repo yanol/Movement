@@ -1,0 +1,394 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\repo\\DataService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\cache\\sdcscache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\cache\\sdcscache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2D14B3E-9008-417C-8264-DF614731966C}|DataService.Tests.csproj\\DataService.Tests.csproj|c:\\repo\\dataservice\\dataservice.tests.csproj\\sdcscachetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2D14B3E-9008-417C-8264-DF614731966C}|DataService.Tests.csproj\\DataService.Tests.csproj|solutionrelative:dataservice.tests.csproj\\sdcscachetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22D3333C-31EC-4337-9B88-80A49B6B27AB}|NewFolder1{22D3333C-31EC-4337-9B88-80A49B6B27AB}|C:\\repo\\DataService\\docker-compose.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
+      "RelativeMoniker": "D:0:0:{22D3333C-31EC-4337-9B88-80A49B6B27AB}|NewFolder1{22D3333C-31EC-4337-9B88-80A49B6B27AB}|solutionrelative:docker-compose.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\datarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\datarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\dataservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\dataservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\cache\\dataretrievalhandlerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\cache\\dataretrievalhandlerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\cache\\sdcscachehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\cache\\sdcscachehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\dataservice.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\dataservice.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\dataitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\dataitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\idataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\idataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\cache\\cacheentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\cache\\cacheentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\cache\\databasehandler .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\cache\\databasehandler .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\cache\\rediscachehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\cache\\rediscachehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\isdcscache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\isdcscache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\idataretrievalhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\idataretrievalhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|c:\\repo\\dataservice\\dataservice\\idatarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC000AA-E3F9-ED2C-D619-00424FAD83F2}|DataService\\DataService.csproj|solutionrelative:dataservice\\idatarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SdcsCacheTests.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService.Tests.csproj\\SdcsCacheTests.cs",
+              "RelativeDocumentMoniker": "DataService.Tests.csproj\\SdcsCacheTests.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService.Tests.csproj\\SdcsCacheTests.cs",
+              "RelativeToolTip": "DataService.Tests.csproj\\SdcsCacheTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJ0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T15:19:21.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\Program.cs",
+              "RelativeDocumentMoniker": "DataService\\Program.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\Program.cs",
+              "RelativeToolTip": "DataService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:24:17.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "DataService\\AppDbContext.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\AppDbContext.cs",
+              "RelativeToolTip": "DataService\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T11:32:08.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SdcsCache.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\Cache\\SdcsCache.cs",
+              "RelativeDocumentMoniker": "DataService\\Cache\\SdcsCache.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\Cache\\SdcsCache.cs",
+              "RelativeToolTip": "DataService\\Cache\\SdcsCache.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowD4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T08:09:12.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataRepository.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\DataRepository.cs",
+              "RelativeDocumentMoniker": "DataService\\DataRepository.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\DataRepository.cs",
+              "RelativeToolTip": "DataService\\DataRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T10:41:40.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "DataService\\appsettings.Development.json",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\appsettings.Development.json",
+              "RelativeToolTip": "DataService\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-02T15:20:02.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DataService",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\DataService.csproj",
+              "RelativeDocumentMoniker": "DataService\\DataService.csproj",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\DataService.csproj",
+              "RelativeToolTip": "DataService\\DataService.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-02T11:00:21.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "docker-compose.yaml",
+              "DocumentMoniker": "C:\\repo\\DataService\\docker-compose.yaml",
+              "RelativeDocumentMoniker": "docker-compose.yaml",
+              "ToolTip": "C:\\repo\\DataService\\docker-compose.yaml",
+              "RelativeToolTip": "docker-compose.yaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-03-03T10:50:32.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\appsettings.json",
+              "RelativeDocumentMoniker": "DataService\\appsettings.json",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\appsettings.json",
+              "RelativeToolTip": "DataService\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-02T16:18:29.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CacheEntity.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\Cache\\CacheEntity.cs",
+              "RelativeDocumentMoniker": "DataService\\Cache\\CacheEntity.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\Cache\\CacheEntity.cs",
+              "RelativeToolTip": "DataService\\Cache\\CacheEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T07:29:57.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DataService.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\DataService.cs",
+              "RelativeDocumentMoniker": "DataService\\DataService.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\DataService.cs",
+              "RelativeToolTip": "DataService\\DataService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T10:26:40.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SdcsCacheHandler.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\Cache\\SdcsCacheHandler.cs",
+              "RelativeDocumentMoniker": "DataService\\Cache\\SdcsCacheHandler.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\Cache\\SdcsCacheHandler.cs",
+              "RelativeToolTip": "DataService\\Cache\\SdcsCacheHandler.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAoAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T09:42:18.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IDataService.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\IDataService.cs",
+              "RelativeDocumentMoniker": "DataService\\IDataService.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\IDataService.cs",
+              "RelativeToolTip": "DataService\\IDataService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T10:26:34.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DataService.http",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\DataService.http",
+              "RelativeDocumentMoniker": "DataService\\DataService.http",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\DataService.http",
+              "RelativeToolTip": "DataService\\DataService.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-03-02T15:20:53.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DataRetrievalHandlerBase.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\Cache\\DataRetrievalHandlerBase.cs",
+              "RelativeDocumentMoniker": "DataService\\Cache\\DataRetrievalHandlerBase.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\Cache\\DataRetrievalHandlerBase.cs",
+              "RelativeToolTip": "DataService\\Cache\\DataRetrievalHandlerBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T13:34:10.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DataController.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\DataController.cs",
+              "RelativeDocumentMoniker": "DataService\\DataController.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\DataController.cs",
+              "RelativeToolTip": "DataService\\DataController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:02:27.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DataItem.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\DataItem.cs",
+              "RelativeDocumentMoniker": "DataService\\DataItem.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\DataItem.cs",
+              "RelativeToolTip": "DataService\\DataItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T10:32:07.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DatabaseHandler .cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\Cache\\DatabaseHandler .cs",
+              "RelativeDocumentMoniker": "DataService\\Cache\\DatabaseHandler .cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\Cache\\DatabaseHandler .cs",
+              "RelativeToolTip": "DataService\\Cache\\DatabaseHandler .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T09:54:56.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RedisCacheHandler.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\Cache\\RedisCacheHandler.cs",
+              "RelativeDocumentMoniker": "DataService\\Cache\\RedisCacheHandler.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\Cache\\RedisCacheHandler.cs",
+              "RelativeToolTip": "DataService\\Cache\\RedisCacheHandler.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwB4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T13:28:46.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ISdcsCache.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\ISdcsCache.cs",
+              "RelativeDocumentMoniker": "DataService\\ISdcsCache.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\ISdcsCache.cs",
+              "RelativeToolTip": "DataService\\ISdcsCache.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T08:06:51.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IDataRetrievalHandler.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\IDataRetrievalHandler.cs",
+              "RelativeDocumentMoniker": "DataService\\IDataRetrievalHandler.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\IDataRetrievalHandler.cs",
+              "RelativeToolTip": "DataService\\IDataRetrievalHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T13:07:12.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IDataRepository.cs",
+              "DocumentMoniker": "C:\\repo\\DataService\\DataService\\IDataRepository.cs",
+              "RelativeDocumentMoniker": "DataService\\IDataRepository.cs",
+              "ToolTip": "C:\\repo\\DataService\\DataService\\IDataRepository.cs",
+              "RelativeToolTip": "DataService\\IDataRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T10:40:12.851Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
