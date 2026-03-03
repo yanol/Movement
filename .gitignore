@@ -2,6 +2,22 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/DataService.slnx
-/DataService/data.db-shm
-/DataService/data.db-wal
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# JetBrains Rider
+.idea/
