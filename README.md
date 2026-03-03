@@ -1,111 +1,225 @@
 DataService
 
-A .NET 10 Web API providing a layered data retrieval service with multi-level caching.
+A **.NET 8 Web API** that provides a layered data-retrieval service using three
+levels of storage: **Redis**, a **Self-Designed Caching System (SDCS)**, and
+**SQLite** as the persistent database, following the **Chain of Responsibility**
+design pattern.
+
+## Architecture Overview
+```
+POST /data
+  └── DataService.SaveAsync()
+        └── DataRepository.SaveAsync()  ← writes to SQLite only
+
+GET /data/{id}
+  └── Chain of Responsibility
+        ├── RedisCacheHandler  (L1) ──► HIT → return immediately
+        │        ↓ MISS
+        ├── SdcsCacheHandler   (L2) ──► HIT → store in Redis → return
+        │        ↓ MISS
+        └── DatabaseHandler    (L3) ──► HIT → store in SDCS + Redis → return
+                 ↓ MISS
+             404 Not Found
+```
+
+> **Key rule:** On `POST`, data is saved to the **database only**.
+> Cache layers are populated **lazily** on the first `GET`.
 
 ---
 
-1. Executive Summary
+## Storage Layers
 
-┌─────────────────────────────────────────────────────┐
-│                  DataController                     │
-│            POST /data  │  GET /data/{id}            │
-└──────────────┬──────────────────┬───────────────────┘
-               │                  │
-          SaveAsync            GetAsync
-               │                  │
-┌──────────────▼──────────────────▼───────────────────┐
-│                   DataService                        │
-└──────────────┬──────────────────┬───────────────────┘
-          (POST)│          (GET)   │ Chain of Responsibility
-                │       ┌──────────▼──────────────┐
-                │       │   RedisCacheHandler  L1  │ HIT → return
-                │       └──────────┬──────────────┘
-                │       ┌──────────▼──────────────┐
-                │       │    SdcsCacheHandler  L2  │ HIT → store in L1 → return
-                │       └──────────┬──────────────┘
-                │       ┌──────────▼──────────────┐
-                │       │    DatabaseHandler    L3  │ HIT → store in L2+L1 → return
-                │       └─────────────────────────┘
-                │
-       ┌────────▼────────────────┐
-       │    DataRepository       │
-       │  	SQLite   
-       └─────────────────────────┘
+### Redis — L1 Cache
 
-2. System Architecture
-   
-The solution follows a Clean Architecture approach, separating concerns into API, Service, Repository, and Infrastructure layers.
+| Property | Value |
+|---|---|
+| Type | Distributed in-memory cache |
+| TTL | **5 minutes** per entry |
+| Library | `StackExchange.Redis` |
+| Role | Fastest layer — checked first on every GET |
+| On miss | Falls through to SDCS |
+| On hit | Returns immediately |
 
-2.1 The Retrieval Chain (Chain of Responsibility)
-Data retrieval is orchestrated through a sequential pipeline:
+If Redis is unavailable the handler catches the exception and falls through
+gracefully — Redis failure never breaks a request.
 
-L1 - Redis (Distributed): The first point of contact. If data exists here, it is returned immediately.
+---
 
-L2 - SDCS (In-Memory): If L1 misses, the Self-Designed Caching System is checked. On a hit, data is returned and "saved back" to L1.
+### SDCS — L2 Cache
 
-L3 - Database (Persistent): The final source of truth. On a hit, data is returned and propagated to both L2 and L1.
+| Property | Value |
+|---|---|
+| Type | In-process in-memory cache (RAM) |
+| Eviction | **LRU** — Least Recently Used |
+| Capacity | Configurable: `3 ≤ capacity ≤ 100` |
+| TTL | None — capacity-based eviction only |
+| Role | Second layer — checked when Redis misses |
+| On miss | Falls through to SQLite |
+| On hit | Stores result in Redis, then returns |
 
-2.2 Design Patterns
-Chain of Responsibility: Manages the sequential flow of retrieval handlers.
+Built from scratch using only primitive collections (`CacheEntry[]` array +
+`ConcurrentDictionary`). See [SDCS Algorithm](#sdcs-algorithm).
 
-Repository Pattern: Abstracts database operations, allowing for easy switching between PostgreSQL, MongoDB, or SQLite.
+---
 
-Dependency Injection: All components interact via interfaces to ensure testability and loose coupling.
+### SQLite — L3 Database
 
-3. SDCS: Self-Designed Caching SystemThe SDCS is a custom in-process cache implementation optimized for memory management without external dependencies.
-   
-  3.1 Technical Constraints:
-  
-  Storage: Volatile RAM (in-process).
-  Capacity: Strictly enforced range of 3 to 100 entries.
-  Eviction Policy: LRU (Least Recently Used). When the capacity is reached, the entry with the oldest "Last Used" timestamp is removed to make space for new data.
-  Thread Safety: Implemented via lock guards to ensure safe concurrent access.
-  
-  3.2 Internal Data StructureThe SDCS utilizes two primary primitive collections to achieve O(1) and O(n) performance:
-  
-  CacheEntity[]: A fixed-size array storing the actual objects and their metadata.
-  Dictionary<string, int>: A lookup table mapping data IDs to their specific array index.
-  _lruIndex: An integer pointer that identifies which slot is next for eviction.
+| Property | Value |
+|---|---|
+| Type | Relational database (file-based) |
+| Library | `Microsoft.EntityFrameworkCore.Sqlite` |
+| Role | Source of truth — checked last |
+| On miss | Returns 404 Not Found |
+| On hit | Stores in SDCS and Redis, then returns |
 
-4. API Endpoints
-The service exposes a RESTful interface for data management.
+`data.db` is created automatically on startup via `EnsureCreated()`.
+No migrations needed.
 
-4.1 Save Data
-Endpoint: POST /data
+## SDCS Algorithm
 
-Logic: Saves data to the Database only. Does not populate caches on write to ensure cache "freshness" follows the "on-demand" pattern.
+### Data structures
 
-Response: 201 Created with the unique ID.
+_entries[]   Fixed CacheEntry array (size = capacity)
+_indexMap{}  Dictionary<string, int>  key → array index  O(1) lookup
+_lruIndex    int — direct pointer to current LRU slot
+_lock        object — guards multi-step atomic operations
+```
 
-4.2 Retrieve Data
-Endpoint: GET /data/{id}
+### CacheEntry
+```csharp
+string Key           // cache key
+T      Value         // any reference or value type
+long   LastUsedTime  // DateTime.UtcNow.Ticks — updated on every touch
 
-Logic: Executes the retrieval chain (Redis → SDCS → Database).
+### TryGet
 
-Response: 200 OK with the data object or 404 Not Found if missing from all layers.
+TryGet("k1")
+  _indexMap lookup → MISS  → return false
+  _indexMap lookup → HIT at index 2
+    entry.LastUsedTime = now
+    if index == _lruIndex → FindLruIndex()   // pointer must move
+    return value
 
-5. Deployment and Setup
-5.1 Infrastructure with Docker
-The solution includes a docker-compose.yml that provides a complete environment:
+### Set
 
-Database: PostgreSQL 16 or MongoDB.
+Set("k4", value)
+  Key already in _indexMap?
+    YES → update value + LastUsedTime
+          if was lruIndex → FindLruIndex()
+          return
 
-Cache: Redis 7-Alpine.
+  _count < _capacity?
+    YES → GetEmptySlot() → write → _count++
 
-GUIs: pgAdmin (SQL), Mongo-Express (NoSQL), and Redis-Commander (Cache).
+  Cache FULL
+    targetIdx = _lruIndex           // evict this slot
+    _indexMap.TryRemove(old key)
+    write new entry into targetIdx
+    FindLruIndex() → _lruIndex updated
 
-5.2 Launch Instructions
-Initialize Containers: docker-compose up -d.
+### FindLruIndex
 
-Run API: dotnet run within the /DataService directory.
+Scans all **occupied** slots, returns index of the entry with the
+smallest `LastUsedTime` — that is the new eviction candidate.
 
-Access Documentation: Open http://localhost:5260/swagger to view and test the interactive API documentation.
+### Complexity table
 
-6. Testing and Quality Assurance
-The solution includes a dedicated test suite (DataService.Tests) covering:
+| Operation | Cost | When |
+|---|---|---|
+| TryGet — no pointer move | O(1) | Entry is not LRU |
+| TryGet — pointer move | O(n) | Entry IS the current LRU |
+| Set — update existing | O(1)/O(n) | O(n) if entry was LRU |
+| Set — insert, not full | O(n) | Scan for empty slot |
+| Set — eviction | O(n) | FindLruIndex after evict |
+| Maximum n | **100** | Config ceiling |
 
-Boundary Testing: Capacity limits (2, 3, 100, 101).
+---
 
-Logic Verification: LRU eviction order and access promotion.
+## Design Patterns
 
-Stress Testing: Thread safety under 500 concurrent operations.
+| Pattern | Where used |
+|---|---|
+| **Chain of Responsibility** | `RedisCacheHandler → SdcsCacheHandler → DatabaseHandler` |
+| **Repository** | `IDataRepository / DataRepository` isolates EF Core |
+| **Dependency Injection** | All abstractions wired in `Program.cs` |
+
+Chain assembly in `Program.cs`:
+```csharp
+redis.SetNext(sdcs).SetNext(db);
+return redis; // head of chain
+
+## How to Run
+
+### Prerequisites
+- [.NET 8 SDK](https://dotnet.microsoft.com/download)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop)
+
+### Step 1 — Start Redis
+
+`docker-compose.yml` (Redis only, API runs locally):
+```yaml
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: redis_cache
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+```bash
+docker-compose up -d
+
+> `Sdcs:Capacity` must be **3–100**. App throws at startup if violated.
+
+### Step 3 — Run the API
+```bash
+cd DataService
+dotnet run
+
+`data.db` is created automatically in the project folder on first run.
+
+### Step 4 — Open Swagger
+```
+http://localhost:5260/swagger
+
+## Working with Swagger
+```
+http://localhost:5260/swagger
+```
+
+### POST /data — Save data
+
+Request body:
+```json
+{ "content": "Hello World" }
+```
+
+Response `201 Created`:
+```json
+{ "id": "a3f8c1d2e4b64f8a9c1d2e3f4b5a6c7d" }
+```
+
+### GET /data/{id} — Retrieve data
+
+Response `200 OK`:
+```json
+{
+  "id":        "a3f8c1d2e4b64f8a9c1d2e3f4b5a6c7d",
+  "content":   "Hello World",
+  "createdAt": "2024-01-15T12:00:00Z"
+}
+
+## Running Tests
+```bash
+cd DataService.Tests
+dotnet test
+
+| Category | Tests |
+|---|---|
+| Capacity validation | Below min (2), above max (101), boundaries 3 and 100 |
+| TryGet | Miss → false, hit → true + correct value |
+| Set | New key, update existing, fill to capacity |
+| LRU eviction | Oldest evicted, access promotes, update promotes, sequential |
+| Edge cases | Re-add evicted key, value types, object types |
+| Bug exposure | FindLruIndex occupied vs empty slot condition |
+| Thread safety | 500 concurrent reads/writes, 100 concurrent sets |
